@@ -45,6 +45,8 @@ p, span{
     font-size: 4rem;
 }
 
-.color{
-    background-color: red;
+.today-class{
+    font-size: 5rem;
+    
+    font-weight: bold;
 }
