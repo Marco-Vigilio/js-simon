@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex{
+    display: flex;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+main{
+    background-color: #6495ed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    max-width: 1000px;
+    background-color: #e6e6fa;
+    padding: 2rem;
+    text-align: center;
+}
+
+div{
+    padding: 0 2rem;
+}
+
+
+p, span{
+    font-size: 2rem;
+    color: #008089;
+}
+
+.container >p{
+    margin-bottom: 3rem;
+}
+
+.time{
+    font-size: 4rem;
+}
+
+.color{
+    background-color: red;
+}
