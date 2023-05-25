@@ -23,7 +23,7 @@ Ogni secondo il nostro countdown dovrà scalare fino alle 9:30 di domani mattina
 
 
 
-
+/*
 setInterval(orologio, 1000);
 
 function orologio(){
@@ -53,42 +53,49 @@ function orologio(){
     secondTime.innerHTML = second;
 
 }
-
-
-
-const adesso = new Date();
-console.log(adesso);
-
-const dopo = new Date("May 26, 2023 09:30:00");
-console.log(dopo);
-const countDown = dopo - adesso;
-console.log(countDown); //RESTITUISCE IN MILLESIMI DI SECONDO 
-
-//CALCOLO DEI GIORNI - ORE - MINUTI - SECONDI
-let days = Math.floor(countDown / (1000 * 60 * 60 * 24));
-console.log(days);
-
-let hours = Math.floor((countDown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-console.log(hours);
-
-let minutes = Math.floor((countDown % (1000 * 60 * 60)) / (1000 * 60));
-console.log(minutes);
-
-let seconds = Math.floor((countDown % (1000 * 60)) / 1000);
-console.log(seconds);
-
-/*
-//FACCIO VEDERE IN PAGINA I VALORI
-let dayTime = document.querySelector("p.days");
-dayTime.innerHTML = days;
-
-let hourTime = document.querySelector("p.hours");
-hourTime.innerHTML = hours;
-
-let minuteTime = document.querySelector("p.minutes");
-minuteTime.innerHTML = minutes;
-
-let secondTime = document.querySelector("p.seconds");
-secondTime.innerHTML = seconds;
-
 */
+
+setInterval(countDown, 1000);
+
+function countDown(){
+    const adesso = new Date();
+    console.log(adesso);
+
+    const dopo = new Date("May 26, 2023 09:30:00");
+    console.log(dopo);
+    const countDown = dopo - adesso;
+    console.log(countDown); //RESTITUISCE IN MILLESIMI DI SECONDO 
+
+    //CALCOLO DEI GIORNI - ORE - MINUTI - SECONDI
+    let days = Math.floor(countDown / (1000 * 60 * 60 * 24));
+    console.log(days);
+
+    let hours = Math.floor((countDown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    console.log(hours);
+
+    let minutes = Math.floor((countDown % (1000 * 60 * 60)) / (1000 * 60));
+    console.log(minutes);
+
+    let seconds = Math.floor((countDown % (1000 * 60)) / 1000);
+    console.log(seconds);
+
+    if(!(countDown === 0)){
+
+    //FACCIO VEDERE IN PAGINA I VALORI
+    let dayTime = document.querySelector("p.day");
+    dayTime.innerHTML = days;
+
+    let hourTime = document.querySelector("p.hour");
+    hourTime.innerHTML = hours;
+
+    let minuteTime = document.querySelector("p.minute");
+    minuteTime.innerHTML = minutes;
+
+    let secondTime = document.querySelector("p.second");
+    secondTime.innerHTML = seconds;
+
+    }
+    else{
+        alert("Oggi c'e Classe");
+    }
+}
