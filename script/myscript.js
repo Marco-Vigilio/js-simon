@@ -22,47 +22,46 @@ Ogni secondo il nostro countdown dovrà scalare fino alle 9:30 di domani mattina
  */
 
 
-//const lezione = new Date("May 26, 2023 09:30:00");
-//console.log(lezione);
+const lezione = new Date("May 26, 2023 09:30:00");
+console.log(lezione);
 
-let divTime = document.querySelector("div.time");
-console.log(divTime);
-let p = document.createElement("p");
-p.classList.add("number");
-p.append(00);
-divTime.appendChild(p);
+setInterval(orologio, 1000);
+
+function orologio(){
+
+    const dataNow = new Date();
+    console.log(dataNow);
+
+    let day = dataNow.getDate();
+    console.log(day);
+
+    let hour = dataNow.getHours();
+    console.log(hour);
+
+    let minute = dataNow.getMinutes();
+    console.log(minute);
+
+    let second = dataNow.getSeconds();
+    console.log(second);
 
 
-const dataNow = new Date();
-console.log(dataNow);
+    //FACCIO VEDERE IN PAGINA I VALORI
+    let dayTime = document.querySelector("p.day");
+    dayTime.innerHTML = day;
 
-let day = dataNow.getDay();
-console.log(day);
+    let hourTime = document.querySelector("p.hour");
+    hourTime.innerHTML = hour;
 
-let hour = dataNow.getHours();
-console.log(hour);
+    let minuteTime = document.querySelector("p.minute");
+    minuteTime.innerHTML = minute;
 
-let minutes = dataNow.getMinutes();
-console.log(minutes);
+    let secondTime = document.querySelector("p.second");
+    secondTime.innerHTML = second;
 
-let seconds = dataNow.getSeconds();
-console.log(seconds);
-
+}
 
 
 /*
-setInterval(Minuti,3000);
-
-function DataNow(){
-const data = new Date();
-let hours, minutes, seconds, ms;
-hours = data.getHours() + ":";
-minutes = data.getMinutes() + ":";
-seconds = data.getSeconds() + ":";
-ms = data.getMilliseconds() + ":";
-console.log("Sono le ore " + hours + minutes + seconds + ms);
-}
-
 
 function Minuti() {
     var data = new Date();
