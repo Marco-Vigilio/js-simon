@@ -22,27 +22,21 @@ Ogni secondo il nostro countdown dovrà scalare fino alle 9:30 di domani mattina
  */
 
 
-const lezione = new Date("May 26, 2023 09:30:00");
-console.log(lezione);
+
 
 setInterval(orologio, 1000);
 
 function orologio(){
 
     const dataNow = new Date();
-    console.log(dataNow);
 
     let day = dataNow.getDate();
-    console.log(day);
 
     let hour = dataNow.getHours();
-    console.log(hour);
 
     let minute = dataNow.getMinutes();
-    console.log(minute);
 
     let second = dataNow.getSeconds();
-    console.log(second);
 
 
     //FACCIO VEDERE IN PAGINA I VALORI
@@ -61,15 +55,28 @@ function orologio(){
 }
 
 
-/*
+//let lezione = new Date("May 26, 2023 09:30:00");
+//console.log(lezione);
 
+
+let d = new Date();
+console.log(d);
+
+let n = new Date("May 26, 2023 09:30:00");
+console.log(n);
+
+let countDown = n - d;
+console.log(countDown);
+
+
+/*
 function Minuti() {
-    var data = new Date();
-    var minuti = data.getMinutes();
-    var mancanti = data.setMinutes(60 - minuti);
-    minuti = data.getMinutes();
-    console.log("Mancano " + minuti  + " minuti alla fine dell'ora!!!");
-    return(minuti);
+    var data = lezione;
+    var ore = data.getMinutes();
+    var mancanti = data.setMinutes(60 - ore);
+    ore = data.getMinutes();
+    console.log("Mancano " + ore  + " ore");
+    return(ore);
 }
 
 Minuti();
