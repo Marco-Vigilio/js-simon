@@ -55,19 +55,20 @@ function orologio(){
 }
 
 
-//let lezione = new Date("May 26, 2023 09:30:00");
-//console.log(lezione);
+let adesso = new Date();
+console.log(adesso);
 
+let dopo = new Date("May 26, 2023 09:30:00");
+console.log(dopo);
+let countDown = dopo - adesso;
+console.log(countDown); //RESTITUISCE IN MILLESIMI DI SECONDO 
 
-let d = new Date();
-console.log(d);
+const minuti =  parseInt((countDown / (1000 * 60)));
+console.log(minuti);
 
-let n = new Date("May 26, 2023 09:30:00");
-console.log(n);
-
-let countDown = n - d;
-console.log(countDown);
-
+const ore = minuti * 60;
+const giorni = ore * 24;
+const anni = giorni * 365;
 
 /*
 function Minuti() {
