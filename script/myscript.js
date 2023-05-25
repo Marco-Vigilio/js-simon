@@ -55,30 +55,40 @@ function orologio(){
 }
 
 
-let adesso = new Date();
+
+const adesso = new Date();
 console.log(adesso);
 
-let dopo = new Date("May 26, 2023 09:30:00");
+const dopo = new Date("May 26, 2023 09:30:00");
 console.log(dopo);
-let countDown = dopo - adesso;
+const countDown = dopo - adesso;
 console.log(countDown); //RESTITUISCE IN MILLESIMI DI SECONDO 
 
-const minuti =  parseInt((countDown / (1000 * 60)));
-console.log(minuti);
+//CALCOLO DEI GIORNI - ORE - MINUTI - SECONDI
+let days = Math.floor(countDown / (1000 * 60 * 60 * 24));
+console.log(days);
 
-const ore = minuti * 60;
-const giorni = ore * 24;
-const anni = giorni * 365;
+let hours = Math.floor((countDown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+console.log(hours);
+
+let minutes = Math.floor((countDown % (1000 * 60 * 60)) / (1000 * 60));
+console.log(minutes);
+
+let seconds = Math.floor((countDown % (1000 * 60)) / 1000);
+console.log(seconds);
 
 /*
-function Minuti() {
-    var data = lezione;
-    var ore = data.getMinutes();
-    var mancanti = data.setMinutes(60 - ore);
-    ore = data.getMinutes();
-    console.log("Mancano " + ore  + " ore");
-    return(ore);
-}
+//FACCIO VEDERE IN PAGINA I VALORI
+let dayTime = document.querySelector("p.days");
+dayTime.innerHTML = days;
 
-Minuti();
+let hourTime = document.querySelector("p.hours");
+hourTime.innerHTML = hours;
+
+let minuteTime = document.querySelector("p.minutes");
+minuteTime.innerHTML = minutes;
+
+let secondTime = document.querySelector("p.seconds");
+secondTime.innerHTML = seconds;
+
 */
