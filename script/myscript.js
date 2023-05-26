@@ -61,7 +61,7 @@ function countDown(){
     const adesso = new Date();
     const dopo = new Date("May 26, 2023 09:30:00");
     const countDown = dopo - adesso;
-    //console.log(countDown); //RESTITUISCE IN MILLESIMI DI SECONDO 
+    console.log(countDown); //RESTITUISCE IN MILLESIMI DI SECONDO 
 
     //CALCOLO DEI GIORNI - ORE - MINUTI - SECONDI
     let days = Math.floor(countDown / (1000 * 60 * 60 * 24));
@@ -72,7 +72,9 @@ function countDown(){
 
     let seconds = Math.floor((countDown % (1000 * 60)) / 1000);
 
-    if(!(countDown === 0)){
+
+
+    if(!(countDown < 0)){
 
         //FACCIO VEDERE IN PAGINA I VALORI
         let dayTime = document.querySelector("p.day");
